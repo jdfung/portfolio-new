@@ -10,8 +10,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     hero,
     about,
-    skill,
     project,
+    skill,
     experience,
     ],
 }

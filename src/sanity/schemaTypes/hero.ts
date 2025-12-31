@@ -13,6 +13,13 @@ export const hero = defineType({
         validation: (Rule) => Rule.required(),
       }),
       defineField({
+        name: 'symbol',
+        title: 'Symbol',
+        type: 'string',
+        description: 'The symbol displayed in the hero.',
+        validation: (Rule) => Rule.required(),
+      }),
+      defineField({
         name: 'roleTitle',
         title: 'Role Title',
         type: 'string',
@@ -27,17 +34,16 @@ export const hero = defineType({
         description: 'A brief, engaging statement.',
       }),
       defineField({
-        name: 'heroImage',
-        title: 'Hero Image (Optional)',
-        type: 'image',
-        options: {
-          hotspot: true, // Allows cropping based on a focal point
-        },
-        description: 'A high-res image of yourself or an avatar.',
-      }),
+        name: 'resume',
+        title: 'Resume',
+        type: 'file',
+      })
     ],
     // Ensures only one Hero document can exist in the studio
     initialValue: {
-      name: 'Jane Doe',
+      name: 'Jayden Fung',
+      symbol: '范',
+      roleTitle: 'Full Stack Developer',
+      tagline: 'A brief, engaging statement.',
     },
   });

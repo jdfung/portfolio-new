@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f6f1; /* natural paper white */
+  --foreground: #1C1C1C; /* soft black */
 }
 
 @theme inline {
@@ -10,17 +10,91 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: #1C1C1C;
+  /* --color-accent: #B7282E;
+  --color-shiro: #FAF7F2;
+  --color-sumi: #4A4A4A;
+  --color-kasshoku: #CFC6B8;
+  --color-paper: #FDFCF9;
+  --color-sage: #E3E3DA;
+  --color-moss: #6B7A5F;
+  --color-ink: #2D3E4E; */
+
+  --color-washi: #f8f6f1;
+  --color-shiro: #ffffff;
+  --color-sumi: #2d2d2d;
+  --color-kuro: #1a1a1a;
+  
+  --color-sakura: #ffd4d4;
+  --color-momo: #ffb5b5;
+  --color-ume: #e8a5a5;
+  
+  --color-matcha: #c4d4c0;
+  --color-aoi: #88a0a8;
+  --color-asagi: #6b9ca6;
+  
+  --color-suoh: #8b6f6f;
+  --color-azuki: #96746f;
+  --color-kaki: #b8956f;
+  
+  --color-hai: #9b9b9b;
+  --color-nezumi: #6e6e6e;
+  --color-text-primary: #2d2d2d;
+  --color-text-secondary: #6e6e6e;
+  --color-text-muted: #9b9b9b;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* animation keyframe */
+
+@keyframes move {
+  0% {
+    transform: translate(-50%, 10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, 20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 40px);
+    opacity: 0;
+  }
+}
+
+.animate-move {
+  animation: move 2s linear infinite;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-right: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  transform: rotate(45deg);
+  margin: -10px;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-arrow {
+  animation: arrow 2s infinite;
 }

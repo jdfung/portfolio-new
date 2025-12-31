@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// import SmoothScroller from "@/components/SmoothScroller";
+import SideNav from "@/components/SideNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`overflow-x-hidden ${geistSans.variable} ${geistMono.variable} antialiased bg-[--background]`}
       >
-        {children}
+            <SideNav />
+
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

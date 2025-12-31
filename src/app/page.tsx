@@ -1,25 +1,24 @@
-// app/page.tsx
-import { Hero } from '@/sections/Hero';
-// Import other sections here as you build them
 
-// This is the main monopage file, rendered as a Server Component by default
+import { Hero } from '@/sections/Hero';
+import { About } from '@/sections/About';
+import { Project } from '@/sections/Project';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrollEffects from '@/components/ScrollEffects';
+
 export default function Home() {
+
+  gsap.registerPlugin(ScrollTrigger);
+  
+
   return (
     <main className="min-h-screen">
       
-      {/* 1. Hero Section - Fetches data and handles GSAP intro */}
       <Hero /> 
+      <About />
+      <Project />
+      <ScrollEffects />
 
-      {/* 2. About Section (To be implemented)
-        <About />
-      */}
-      
-      {/* 3. Tech Stack Section (To be implemented)
-        <TechStack /> 
-      */}
-
-      {/* ... and so on for all other sections */}
-      
     </main>
   );
 }

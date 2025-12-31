@@ -4,10 +4,11 @@ import { heroQuery } from '@/lib/sanity/groq';
 import { HeroContent } from '@/components/HeroContent';
 
 type HeroSectionData = {
+  symbol: string;
   name: string;
   roleTitle: string;
   tagline: string;
-  heroImage?: { url: string; metadata: { lqip: string } };
+  resume?: { url: string };
 };
 
 export const Hero = async () => {
@@ -18,6 +19,7 @@ export const Hero = async () => {
   }
 
   return (
+    // Pass the fetched data down to the Client Component
     <HeroContent data={data} />
   );
 };
